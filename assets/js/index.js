@@ -28,6 +28,7 @@ function getUserInfo() {
                 return layui.layer.msg('获取用户信息失败')
             }
         //调用renderAvater 渲染用户的头像
+        console.log(res.data);
         renderAvater(res.data)
         },
         // complete: function(res) {
@@ -52,11 +53,11 @@ function renderAvater(user) {
     if (user.user_pic !== null) {
         //3.1渲染图片头像
         $('.layui-nav-img').attr('src',user.user_pic).show()
-        $('.text-avatar').hide()
+        $('.text-avater').hide()
     } else {
         //3.2渲染文本头像
         $('.layui-nav-img').hide()
         const first = name[0].toUpperCase()
-        $('.text-avatar').html(first).show()
+        $('.text-avater').html(first).show()
     }
 }
