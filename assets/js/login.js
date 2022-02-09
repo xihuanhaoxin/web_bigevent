@@ -32,7 +32,8 @@ $(function () {
         //2.发起ajax的post请求
         $.post('http://www.liulongbin.top:3007/api/reguser',{ username: $('#form_reg [name=username]').val(),password: $('#form_reg [name=password]').val()}, function(res) {
             if (res.status !== 0) {
-                return layer.msg(res.message);
+                console.log(res.message);
+                // return layer.msg(res.message);
             }
             layer.msg('注册成功,请登录');
             //模拟人的点击行为
